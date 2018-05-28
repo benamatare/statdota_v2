@@ -1,25 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
+// import { Route, Switch, withRouter } from 'react-router-dom'
 
 import './css/App.css';
 
-import Counter from './components/counter.js';
 import Searchbar from './components/searchbar.js';
+import Heroes from './components/heroes.js';
 
 const App = props => {
-    return (
-      <div className="App">
-        <h1> This is a counter </h1>
-        <Counter />
-        <h1>{props.query}</h1>
-        <br></br>
-        <Searchbar />
-      </div>
+  console.log(props);
+
+  return (
+    <div className="App">
+      <Searchbar />
+      <br></br>
+      <h1>{props.query}</h1>
+      <br></br>
+      <Heroes />
+    </div>
 )}
 
 const mapStateToProps = state => {
   return { query: state.query }
 }
-
 
 export default connect(mapStateToProps, null)(App);

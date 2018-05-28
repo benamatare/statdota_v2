@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { setQuery, clearQuery } from '../actions.js'
+import { setQuery } from './actions/actions.js'
 
 class Searchbar extends Component {
   constructor(props){
@@ -37,7 +37,7 @@ class Searchbar extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ setQuery: setQuery, clearQuery: clearQuery}, dispatch)
+  return bindActionCreators({ setQuery: setQuery }, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(Searchbar);
