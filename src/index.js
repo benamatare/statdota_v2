@@ -17,7 +17,7 @@ import './css/index.css';
      window.devToolsExtension ? window.devToolsExtension() : f => f
    ))
 
-   console.log(store.getState());
+   // console.log(store.getState());
 
 ReactDOM.render(
   <Provider store={ store }>
