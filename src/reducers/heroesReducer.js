@@ -1,7 +1,18 @@
 //Default local state
 var defaultState = {
-  stratz: null,
-  open_dota: null
+  stratz: {
+    heroes: null,
+    hero: {
+      data: null,
+      lane: null,
+      talent: null,
+      matchup: null
+    },
+  },
+  open_dota: {
+    heroes: null,
+
+    }
 };
 
 
@@ -15,11 +26,47 @@ const heroesReducer = (state = defaultState, action) => {
       temp_arr.push(action.payload[k])
     });
         return {...state,
-          stratz: temp_arr
+          stratz: {...state.stratz,
+            heroes: temp_arr
+          }
         };
       case 'SET_HEROES_OPENDOTA':
         return {...state,
-          open_dota: action.payload
+          open_dota: {...state.open_dota,
+            heroes: action.payload
+          }
+        };
+      case 'SET_HERO_STRATZ':
+        return {...state,
+          stratz: {...state.stratz,
+            hero: {...state.hero,
+              data: action.payload
+            },
+          },
+        };
+      case 'SET_HERO_LANE_STRATZ':
+        return {...state,
+          stratz: {...state.stratz,
+            hero: {...state.hero,
+              lane: action.payload
+            },
+          },
+        };
+      case 'SET_HERO_TALENT_STRATZ':
+        return {...state,
+          stratz: {...state.stratz,
+            hero: {...state.hero,
+              talent: action.payload
+            },
+          }
+        };
+      case 'SET_HERO_MATCHUP_STRATZ':
+        return {...state,
+          stratz: {...state.stratz,
+            hero: {...state.hero,
+              matchup: action.payload
+            },
+          },
         };
     default:
       return state;

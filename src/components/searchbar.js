@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { setQuery } from './actions/actions.js'
+import { setQuery } from '../actions/actions.js'
 
 class Searchbar extends Component {
   constructor(props){

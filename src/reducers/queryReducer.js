@@ -1,6 +1,6 @@
 //Default local state
 var defaultState = {
-  query: ''
+  query: ""
 };
 // Exported local state
 const queryReducer = (state = defaultState, action) => {
